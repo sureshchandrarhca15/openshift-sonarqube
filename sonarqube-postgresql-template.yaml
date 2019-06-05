@@ -257,6 +257,8 @@ objects:
     resources:
       requests:
         storage: ${POSTGRESQL_VOLUME_CAPACITY}
+    volumeName: sonarqube-postgres-pv
+    storageClassName: standard
 - apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
@@ -267,6 +269,8 @@ objects:
     resources:
       requests:
         storage: ${SONAR_VOLUME_CAPACITY}
+    volumeName: sonarqube-data-pv
+    storageClassName: standard
 parameters:
 - displayName: SonarQube version
   value: "6.7"
