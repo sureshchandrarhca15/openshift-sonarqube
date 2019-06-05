@@ -247,30 +247,30 @@ objects:
           namespace: openshift
       type: ImageChange
     - type: ConfigChange
-- apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: postgresql-sonarqube-data
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: ${POSTGRESQL_VOLUME_CAPACITY}
-    volumeName: sonarqube-postgres-pv
-    storageClassName: standard
-- apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: sonarqube-data
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: ${SONAR_VOLUME_CAPACITY}
-    volumeName: sonarqube-data-pv
-    storageClassName: standard
+#- apiVersion: v1
+#  kind: PersistentVolumeClaim
+#  metadata:
+#    name: postgresql-sonarqube-data
+#  spec:
+#    accessModes:
+#    - ReadWriteOnce
+#    resources:
+#      requests:
+#        storage: ${POSTGRESQL_VOLUME_CAPACITY}
+#    volumeName: sonarqube-postgres-pv
+#    storageClassName: standard
+#- apiVersion: v1
+#  kind: PersistentVolumeClaim
+#  metadata:
+#    name: sonarqube-data
+#  spec:
+#    accessModes:
+#    - ReadWriteOnce
+#    resources:
+#      requests:
+#        storage: ${SONAR_VOLUME_CAPACITY}
+#    volumeName: sonarqube-data-pv
+#    storageClassName: standard
 parameters:
 - displayName: SonarQube version
   value: "6.7"
@@ -282,13 +282,13 @@ parameters:
   generate: expression
   name: POSTGRESQL_PASSWORD
   required: true
-- description: Volume space available for PostgreSQL
-  displayName: PostgreSQL Volume Capacity
-  name: POSTGRESQL_VOLUME_CAPACITY
-  required: true
-  value: 5Gi
-- description: Volume space available for SonarQube
-  displayName: SonarQube Volume Capacity
-  name: SONAR_VOLUME_CAPACITY
-  required: true
-  value: 5Gi
+#- description: Volume space available for PostgreSQL
+#  displayName: PostgreSQL Volume Capacity
+#  name: POSTGRESQL_VOLUME_CAPACITY
+#  required: true
+#  value: 5Gi
+#- description: Volume space available for SonarQube
+#  displayName: SonarQube Volume Capacity
+#  name: SONAR_VOLUME_CAPACITY
+#  required: true
+#  value: 5Gi
