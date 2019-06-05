@@ -136,28 +136,28 @@ objects:
           kind: ImageStreamTag
           name: sonarqube:${SONARQUBE_VERSION}
       type: ImageChange
-#- apiVersion: v1
-#  kind: PersistentVolumeClaim
-#  metadata:
-#    name: sonarqube-data
-#  spec:
-#    accessModes:
-#    - ReadWriteOnce
-#    resources:
-#      requests:
-#        storage: ${SONAR_VOLUME_CAPACITY}
-#    volumeName: sonarqube-data-pv
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: sonarqube-data
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: ${SONAR_VOLUME_CAPACITY}
+    volumeName: sonarqube-data-pv
 #    storageClassName: standard
 parameters:
 - displayName: SonarQube version
   value: "6.7"
   name: SONARQUBE_VERSION
   required: true
-#- description: Volume space available for SonarQube
-#  displayName: SonarQube Volume Capacity
-#  name: SONAR_VOLUME_CAPACITY
-#  required: true
-#  value: 1Gi
+- description: Volume space available for SonarQube
+  displayName: SonarQube Volume Capacity
+  name: SONAR_VOLUME_CAPACITY
+  required: true
+  value: 5Gi
 - displayName: SonarQube Max Memory
   name: SONAR_MAX_MEMORY
   required: true
